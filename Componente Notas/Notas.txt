@@ -1,0 +1,1 @@
+Pequeña aplicación donde crear, eliminar y editar notas. Las notas se almacenaran en un array.

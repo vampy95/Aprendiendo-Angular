@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="text-center">Aplicacion de notas</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Lista en angular</h2>
+      <ul class="list-group">
+        <li *ngFor="let n of my_notes" class="list-group-item" (click)="viewNote(n)"> {{n.id}} - {{n.title}} </li>
+      </ul>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <a name="" id="" class="btn btn-primary btn-block" href="#" role="button" (click)="addNote()">Nueva Nota</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" *ngIf="show_form">
+      <div class="form-group">
+        <h2>Nueva Nota</h2>
+        <div class="form-group">
+          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Titulo de la Nota" [(ngModel)]="note.title">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="" id="" rows="3" [(ngModel)]="note.description"></textarea>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-4">
+            <a name="" id="" class="btn btn-danger btn-block" *ngIf="editing" href="#" role="button" (click)="delete()">Eliminar</a>
+          </div>
+          <div class="col-md-4">
+            <a name="" id="" class="btn btn-primary btn-block" href="#" role="button" (click)="cancel()">Cancelar</a>
+          </div>
+          <div class="col-md-4">
+            <a name="" id="" class="btn btn-primary btn-block" href="#" role="button" (click)="createNote()">Guardar Nota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<router-outlet></router-outlet>
