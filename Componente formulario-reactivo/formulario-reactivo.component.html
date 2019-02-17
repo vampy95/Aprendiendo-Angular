@@ -1,0 +1,47 @@
+<div class="container">
+
+  <h1 class="text-center">Formulario reactivo</h1>
+
+  <div class="row">
+    <div class="col-md-8 mx-auto" *ngIf="enviado == false; else noEnviado">
+
+      <form action="" [formGroup]="formulario" (submit)="onSubmit(formulario)" novalidate>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId" formControlName="name">
+          <small class="error" *ngIf="formulario.controls.name.errors && formulario.controls.name.touched">Error al introducir nombre</small>
+        </div>
+        <div class="form-group">
+          <label for="surname">Surname:</label>
+          <input type="text" name="surname" id="surname" class="form-control" placeholder="" aria-describedby="helpId" formControlName="surname">
+          <small class="error" *ngIf="formulario.controls.surname.errors && formulario.controls.surname.touched">Error al introducir apellido</small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId" formControlName="email">
+          <small class="error" *ngIf="formulario.controls.email.errors && formulario.controls.email.touched">Error al introducir email</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="" formControlName="password">
+          <small class="error" *ngIf="formulario.controls.password.errors && formulario.controls.password.touched">Error al introducir contraseña</small>
+        </div>
+        <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary">Enviar</button>
+      </form>
+
+    </div>
+
+    <ng-template #noEnviado>
+
+      <div class="alert alert-success mx-auto mt-5" role="alert">
+        ¡¡El formulario ha sido enviado correctamente!!
+      </div>
+
+    </ng-template>
+
+  </div>
+
+
+
+
+</div>

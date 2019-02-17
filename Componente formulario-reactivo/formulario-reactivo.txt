@@ -1,0 +1,1 @@
+Formulario reactivo valida todos los campos del formulario, si estos son correctos habilita el botón de envió, al pulsar este botón desaparece el formulario y aparece un alert de bootstrap.
